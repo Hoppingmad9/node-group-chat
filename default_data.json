@@ -1,60 +1,60 @@
 {
   "players": {
     "player0": {
-      "active": "0",
+      "id": "",
       "name": "",
       "chips": "0",
-      "card1": "",
-      "card2": ""
+      "card0": "",
+      "card1": ""
     },
     "player1": {
-      "active": "0",
+      "id": "",
       "name": "",
       "chips": "0",
-      "card1": "",
-      "card2": ""
+      "card0": "",
+      "card1": ""
     },
     "player2": {
-      "active": "0",
+      "id": "",
       "name": "",
       "chips": "0",
-      "card1": "",
-      "card2": ""
+      "card0": "",
+      "card1": ""
     },
     "player3": {
-      "active": "0",
+      "id": "",
       "name": "",
       "chips": "0",
-      "card1": "",
-      "card2": ""
+      "card0": "",
+      "card1": ""
     },
     "player4": {
-      "active": "0",
+      "id": "",
       "name": "",
       "chips": "0",
-      "card1": "",
-      "card2": ""
+      "card0": "",
+      "card1": ""
     },
     "player5": {
-      "active": "0",
+      "id": "",
       "name": "",
       "chips": "0",
-      "card1": "",
-      "card2": ""
+      "card0": "",
+      "card1": ""
     },
     "player6": {
-      "active": "0",
+      "id": "",
       "name": "",
       "chips": "0",
-      "card1": "",
-      "card2": ""
+      "card0": "",
+      "card1": ""
     },
     "player7": {
-      "active": "0",
+      "id": "",
       "name": "",
       "chips": "0",
-      "card1": "",
-      "card2": ""
+      "card0": "",
+      "card1": ""
     }
   }
 }

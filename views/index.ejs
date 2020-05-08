@@ -69,10 +69,32 @@ strong {
   </style>
   <script src="../../socket.io/socket.io.js"></script>
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
   <h1>future poker app</h1>
-  <div id='cardsBox'><h2>Your cards:</h2><h3 id='cards'</h3></div>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-sm'>
+        <h2>Your cards:</h2><ul id="cards"></ul>
+      </div>
+      <div class='col-sm'>
+        <h2>Your chips:</h2><h3 id='chips'></h3>
+      </div>
+      <div class='col-sm'>
+        <h2>The pot:</h2><h3 id='pot'></h3>
+      </div>
+    </div>
+    <div class='row'>
+    <div class='col-sm' style='text-align:center'>
+        <p>The active player is </p>
+      </div>
+      <div class='col-sm' style='text-align:center'>
+        <p id='active_player'></p>
+      </div>
+    </div>
+  </div>
+
     <ul id="messages"></ul>
     <form action="/" method="POST" id="chatForm">
       <input id="txt" autocomplete="off" autofocus="on" placeholder="type your message here..." /><button>Send</button>
@@ -98,8 +120,32 @@ strong {
       $('#messages').append($('<li>').html(message));
     });
 
+    //show cards
+    socket.on('cards', function (message) {
+      //$('#cards').html(message);
+      $('#cards').append($('<li>').html(message[0]));
+      $('#cards').append($('<li>').html(message[1]));
+      console.log('Your cards: ' + message[0] + ', ' + message[1]);
+    });
+
+    //show chips
+    socket.on('chips', function (message) {
+      $('#chips').html(message);
+      console.log('Your chips: ' + message);
+    });
+
+    //show active player
+    socket.on('active_player', function (message) {
+      $('#active_player').html(message);
+      console.log('Active player: ' + message);
+    });
+
     // ask username
-    var username = prompt('Please tell me your name');
+    const urlParams = new URLSearchParams(window.location.search);
+    var username = urlParams.get('name');
+    if (!username) {
+      username = prompt('Please tell me your name');
+    }
     socket.emit('username', username);
 
     socket.on('player_number', function(message) {

@@ -1,60 +1,60 @@
 {
   "players": {
     "player0": {
-      "active": "0",
-      "name": "",
-      "chips": "0",
-      "card1": "",
-      "card2": ""
+      "id": "zwBSBF8n6HmUOA21AAAJ",
+      "name": "sam",
+      "chips": 10000,
+      "card0": "10 Hearts",
+      "card1": "9 Spades"
     },
     "player1": {
-      "active": "0",
-      "name": "",
-      "chips": "0",
-      "card1": "",
-      "card2": ""
+      "id": "bs2_ZIPJCxRZ0tSGAAAK",
+      "name": "dean",
+      "chips": 10000,
+      "card0": "3 Hearts",
+      "card1": "J Diamonds"
     },
     "player2": {
-      "active": "0",
-      "name": "",
-      "chips": "0",
-      "card1": "",
-      "card2": ""
+      "id": "0q97mek5ynhBdKSWAAAL",
+      "name": "3",
+      "chips": 10000,
+      "card0": "A Diamonds",
+      "card1": "8 Clubs"
     },
     "player3": {
-      "active": "0",
-      "name": "",
-      "chips": "0",
-      "card1": "",
-      "card2": ""
+      "id": "wpGsV3l2M-BQV1u7AAAM",
+      "name": "4",
+      "chips": 10000,
+      "card0": "6 Spades",
+      "card1": "5 Clubs"
     },
     "player4": {
-      "active": "0",
-      "name": "",
-      "chips": "0",
-      "card1": "",
-      "card2": ""
+      "id": "DM8Xj1fJftpkFgGGAAAN",
+      "name": "5",
+      "chips": 10000,
+      "card0": "4 Spades",
+      "card1": "J Hearts"
     },
     "player5": {
-      "active": "0",
+      "id": "",
       "name": "",
       "chips": "0",
-      "card1": "",
-      "card2": ""
+      "card0": "",
+      "card1": ""
     },
     "player6": {
-      "active": "0",
+      "id": "",
       "name": "",
       "chips": "0",
-      "card1": "",
-      "card2": ""
+      "card0": "",
+      "card1": ""
     },
     "player7": {
-      "active": "0",
+      "id": "",
       "name": "",
       "chips": "0",
-      "card1": "",
-      "card2": ""
+      "card0": "",
+      "card1": ""
     }
   }
 }
