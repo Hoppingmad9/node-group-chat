@@ -1,0 +1,60 @@
+{
+  "players": {
+    "player0": {
+      "active": "0",
+      "name": "",
+      "chips": "0",
+      "card1": "",
+      "card2": ""
+    },
+    "player1": {
+      "active": "0",
+      "name": "",
+      "chips": "0",
+      "card1": "",
+      "card2": ""
+    },
+    "player2": {
+      "active": "0",
+      "name": "",
+      "chips": "0",
+      "card1": "",
+      "card2": ""
+    },
+    "player3": {
+      "active": "0",
+      "name": "",
+      "chips": "0",
+      "card1": "",
+      "card2": ""
+    },
+    "player4": {
+      "active": "0",
+      "name": "",
+      "chips": "0",
+      "card1": "",
+      "card2": ""
+    },
+    "player5": {
+      "active": "0",
+      "name": "",
+      "chips": "0",
+      "card1": "",
+      "card2": ""
+    },
+    "player6": {
+      "active": "0",
+      "name": "",
+      "chips": "0",
+      "card1": "",
+      "card2": ""
+    },
+    "player7": {
+      "active": "0",
+      "name": "",
+      "chips": "0",
+      "card1": "",
+      "card2": ""
+    }
+  }
+}

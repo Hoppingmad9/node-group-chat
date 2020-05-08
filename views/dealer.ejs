@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Group Chat on Node.js</title>
+  <style>
+  * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+h1{
+     font: 2.5vw Avenir Next, Helvetica, Arial;
+     color: #fff;
+     background: #0f4c5c;
+     border: none;
+     padding: .2em;
+
+
+}
+ body {
+     font: 1.5vw Avenir Next, Helvetica, Arial;
+     padding-bottom: 2.1em;
+}
+ form {
+     background: #fff;
+     padding: 0.1em;
+     position: fixed;
+     bottom: 0;
+     width: 100%;
+     border-color: #000;
+     border-top-style: solid;
+     border-top-width: 1px;
+}
+ form input {
+     border-style: solid;
+     border-width: 0.1em;
+     padding: 1em;
+     width: 85vw;
+     margin-right: .5%;
+     border-radius: .5em;
+}
+ form button {
+     width: 9vw;
+     background: #f5cb5c;
+     border: none;
+     padding: 1em;
+     margin-left: 2%;
+     border-radius: 2em;
+}
+ #messages {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+}
+ #messages li {
+     padding: .5em 1em;
+}
+ #messages li:nth-child(odd) {
+     background: #efefe9;
+}
+strong {
+    font-weight: bold;
+    color: #fff;
+    background: #0f4c5c;
+    border: none;
+    padding: .2em;
+    border-radius: .4em;
+}
+  </style>
+  <script src="../../socket.io/socket.io.js"></script>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+  <h1>Dealer View</h1>
+  <button name='newGame'>NEW GAME</button>
+  <button name='Deal'>DEAL</button>
+  <ul id="messages"></ul>
+  <form action="/" method="POST" id="chatForm">
+    <input id="txt" autocomplete="off" autofocus="on" placeholder="type your message here..." /><button>Send</button>
+  </form>
+  <script>
+  var socket = io.connect('http://192.168.0.11:8080');
+
+  // new game
+  $('button[name="newGame"]').click(function(e){
+    e.preventDefault();
+    socket.emit('chat_message', "Starting new game...");
+    socket.emit('new_game');
+    return false;
+  });
+
+  // deal cards
+  $('button[name="Deal"]').click(function(e){
+    e.preventDefault();
+    socket.emit('chat_message', "Dealing cards...");
+    socket.emit('deal_cards');
+    return false;
+  });
+
+  // submit text message without reload/refresh the page
+  $('form').submit(function(e){
+    e.preventDefault(); // prevents page reloading
+    socket.emit('chat_message', $('#txt').val());
+    $('#txt').val('');
+    return false;
+  });
+
+  // append the chat text message
+  socket.on('chat_message', function(msg){
+    $('#messages').append($('<li>').html(msg));
+  });
+
+  // append text if someone is online
+  socket.on('is_online', function(username) {
+    $('#messages').append($('<li>').html(username));
+  });
+
+  // ask username
+  var username = 'Dealer';
+  socket.emit('username', username);
+
+  </script>
+</body>
+</html>
